@@ -19,7 +19,6 @@ ENV ANDROID_SDK /usr/local/android-sdk-linux
 ENV PATH ${ANDROID_HOME}/tools:$ANDROID_HOME/platform-tools:$PATH
 
 # Install Android SDK components
-ENV ANDROID_SDK_COMPONENTS platform-tools,build-tools-22.0.1,android-22,extra-android-m2repository,extra-google-m2repository
 
 ONBUILD COPY android_sdk_components.env /android_sdk_components.env
 ONBUILD RUN echo y | android update sdk --no-ui --all --filter "$(cat /android_sdk_components.env)"
