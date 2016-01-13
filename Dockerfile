@@ -15,8 +15,7 @@ RUN dpkg --add-architecture i386 && \
     locale-gen ja_JP.UTF-8 && \
     localedef --list-archivex && locale -a &&  \
     update-locale &&  \
-    apt-get clean && 
-
+    apt-get clean
 
 # Download and untar SDK
 ENV ANDROID_SDK_URL http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
