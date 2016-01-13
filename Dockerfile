@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386 && \
     dpkg-reconfigure locales && \
     echo 'ja_JP.UTF-8 UTF-8' >> /etc/locale.gen && \
     locale-gen ja_JP.UTF-8 && \
-    localedef --list-archivex && locale -a &&  \
+    localedef --list-archive && locale -a &&  \
     update-locale &&  \
     apt-get clean
 
