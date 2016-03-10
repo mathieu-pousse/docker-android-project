@@ -27,7 +27,7 @@ ENV PATH ${ANDROID_HOME}/tools:$ANDROID_HOME/platform-tools:$PATH
 # Install Android SDK components
 
 ONBUILD COPY android_sdk_components.env /android_sdk_components.env
-ONBUILD RUN echo y | android update sdk --no-ui --all --filter "$(cat /android_sdk_components.env)"
+ONBUILD RUN (while :; do echo 'y'; sleep 3; done) | android update sdk --no-ui --all --filter "$(cat /android_sdk_components.env)"
 
 # Support Gradle
 ENV TERM dumb
